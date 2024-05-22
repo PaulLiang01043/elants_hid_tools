@@ -28,12 +28,12 @@
 
 // SW Version
 #ifndef ELAN_TOOL_SW_VERSION
-#define ELAN_TOOL_SW_VERSION           "0.1"
+#define ELAN_TOOL_SW_VERSION           "0.2"
 #endif //ELAN_TOOL_SW_VERSION
 
 // SW Release Date
 #ifndef ELAN_TOOL_SW_RELEASE_DATE
-#define ELAN_TOOL_SW_RELEASE_DATE	"2024-03-20"
+#define ELAN_TOOL_SW_RELEASE_DATE	"2024-05-21"
 #endif //ELAN_TOOL_SW_RELEASE_DATE
 
 /*******************************************

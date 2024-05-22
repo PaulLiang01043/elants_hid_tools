@@ -72,8 +72,12 @@ int gen8_switch_to_boot_code(bool recovery)
             goto GEN8_SWITCH_TO_BOOT_CODE_EXIT;
         }
 
-        // wait 30ms
-        usleep(30*1000);
+        /* [Note] 2024/05/21
+         * With the suggestion from Boot Code developer, 
+         *     change delay time of Enter IAP Mode to 4 ms.
+         */
+        //usleep(30*1000); // wait 30 ms
+        usleep(4*1000); // wait 4 ms
 
         // Gen8 Write Flash Key
         err = send_gen8_write_flash_key_command();
@@ -100,8 +104,12 @@ int gen8_switch_to_boot_code(bool recovery)
         }
     }
 
-    // wait 15ms
-    usleep(15*1000);
+    /* [Note] 2024/05/21
+     * With the suggestion from Boot Code developer, 
+     *     change delay time of Write Flash Key to 4 ms.
+     */
+    //usleep(15*1000); // wait 15 ms
+    usleep(4*1000); // wait 4 ms
 
     // Check Slave Address
     err = check_slave_address();
@@ -558,15 +566,15 @@ int gen8_read_memory_page(unsigned short mem_page_address, unsigned short mem_pa
         err = ERR_INVALID_PARAM;
         goto GEN8_READ_MEMORY_PAGE_EXIT;
     }
-    
-    /* [Note] 2024/01/05
-     * Unit of Length Parameter of Read ROM Command sholud be WORD!!!
-     * This rule is the same in Gen8 case.
-     */
 
-    // Send Show Bulk ROM Data Command
-    //err = send_show_bulk_rom_data_command(mem_page_address, mem_page_size /* (Gen8) unit: byte */);
-    err = send_show_bulk_rom_data_command(mem_page_address, (mem_page_size / 2) /* (Gen8) unit: word */);
+    // Send Show Bulk ROM Data Command    
+    /* [Note] 2024/05/20
+     * Unit of Length Parameter of Read ROM Command for Gen8 IC:
+     * SLOC: Word
+     * Non-SLOC: Byte
+     */
+    //err = send_show_bulk_rom_data_command(mem_page_address, (mem_page_size / 2) /* unit: word */);
+    err = send_show_bulk_rom_data_command(mem_page_address, mem_page_size /* unit: byte */);
     if(err != ERR_SUCCESS)
     {
         ERROR_PRINTF("%s: Fail to Send Gen8 Show Bulk ROM Data Command! err=0x%x.\r\n", __func__, err);

@@ -28,3 +28,12 @@ Sources of this project is based on elan_i2chid_tools v1.18 2022/10/28.
 ### Added
 - Add CHANGELOG.md.
 
+## [0.3] - 2024-05-22
+
+### Change
+- Change the order of reading FW information in sequence for timing control.
+
+### Fixed
+- Change unit of length parameter of Gen8 Read ROM Command to byte.
+- Reduce delay after Write Flash Key Command & Enter IAP Command in Gen8 FW Update Flow.
+- Remove redundant CRLFs in debug log.

@@ -33,7 +33,7 @@
 
 // SW Release Date
 #ifndef ELAN_TOOL_SW_RELEASE_DATE
-#define ELAN_TOOL_SW_RELEASE_DATE	"2024-03-19"
+#define ELAN_TOOL_SW_RELEASE_DATE	"2024-05-21"
 #endif //ELAN_TOOL_SW_RELEASE_DATE
 
 /*******************************************

@@ -73,7 +73,7 @@ CHIDLinuxGet::~CHIDLinuxGet(void)
     // Release input buffer
     if (m_inBuf)
     {
-        //DBG("Release input buffer (address=%p).\r\n", m_inBuf);
+        //DBG("Release input buffer (address=%p).", m_inBuf);
         free(m_inBuf);
         m_inBuf     = NULL;
         m_inBufSize = 0;
@@ -82,7 +82,7 @@ CHIDLinuxGet::~CHIDLinuxGet(void)
     // Release output buffer
     if (m_outBuf)
     {
-        //DBG("Release output buffer (address=%p).\r\n", m_outBuf);
+        //DBG("Release output buffer (address=%p).", m_outBuf);
         free(m_outBuf);
         m_outBuf     = NULL;
         m_outBufSize = 0;
@@ -184,7 +184,7 @@ bool CHIDLinuxGet::IsConnected(void)
 
     if (m_nHidrawFd >= 0)
     {
-        //DBG("Device is connected!\r\n");
+        //DBG("Device is connected!");
         bRet = true;
     }
 
@@ -209,7 +209,7 @@ int CHIDLinuxGet::WriteRawBytes(unsigned char* pszBuf, int nLen, int nTimeout, i
 
     if ((unsigned)nLen > m_outBufSize)
     {
-        ERR("%s: Data length too large(data=%d, buffer size=%d), ret=%d.\r\n", __func__, nLen, m_outBufSize, nRet);
+        ERR("%s: Data length too large(data=%d, buffer size=%d), ret=%d.", __func__, nLen, m_outBufSize, nRet);
         nRet = ERR_INVALID_PARAM;
         goto WRITE_RAW_BYTES_EXIT;
     }
@@ -463,7 +463,7 @@ int CHIDLinuxGet::GetDevVidPid(unsigned int* p_nVid, unsigned int* p_nPid, int n
     // Make Sure Input Pointers Valid
     if((p_nVid == NULL) || (p_nPid == NULL))
     {
-        ERR("%s: Input Parameters Invalid! (p_nVid=%p, p_nPid=%p)\r\n", __func__, p_nVid, p_nPid);
+        ERR("%s: Input Parameters Invalid! (p_nVid=%p, p_nPid=%p)", __func__, p_nVid, p_nPid);
         nRet = ERR_INVALID_PARAM;
         goto GET_DEV_VID_PID_EXIT;
     }
@@ -471,7 +471,7 @@ int CHIDLinuxGet::GetDevVidPid(unsigned int* p_nVid, unsigned int* p_nPid, int n
     // Make Sure Device Found
     if((m_usVID == 0) && (m_usPID == 0))
     {
-        ERR("%s: HID Device Not Found!\r\n", __func__);
+        ERR("%s: HID Device Not Found!", __func__);
         nRet = ERR_DEVICE_NOT_FOUND;
         goto GET_DEV_VID_PID_EXIT;
     }
@@ -498,16 +498,16 @@ int CHIDLinuxGet::GetDevBusType(unsigned int* p_uiBusType, int nDevIdx)
     // Make Sure Input Pointers Valid
     if (p_uiBusType == NULL)
     {
-        ERR("%s: Input Parameters Invalid! (p_uiBusType=%p)\r\n", __func__, p_uiBusType);
+        ERR("%s: Input Parameters Invalid! (p_uiBusType=%p)", __func__, p_uiBusType);
         nRet = ERR_INVALID_PARAM;
         goto GET_DEV_BUS_TYPE_EXIT;
     }
 
     // Make Sure Device Bus Type is Valid 
-    DBG("%s: Bus Type = 0x%x.\r\n", __func__, m_uiBusType);
+    DBG("%s: Bus Type = 0x%x.", __func__, m_uiBusType);
     if (m_uiBusType == 0)
     {
-        ERR("%s: Invalid Device Bus Type! (Bus Type: 0x%x)\r\n", __func__, m_uiBusType);
+        ERR("%s: Invalid Device Bus Type! (Bus Type: 0x%x)", __func__, m_uiBusType);
         nRet = ERR_UNKNOWN_DEVICE_TYPE;
         goto GET_DEV_BUS_TYPE_EXIT;
     }
@@ -630,7 +630,7 @@ int CHIDLinuxGet::FindHidrawDevice(int nVID, int nPID, char *pszDevicePath, size
     pDirectory = opendir(pszPath);
     if (pDirectory == NULL)
     {
-        ERR("%s: Fail to Open Directory %s.\r\n", __func__, pszPath);
+        ERR("%s: Fail to Open Directory %s.", __func__, pszPath);
         nRet = ERR_DEVICE_NOT_FOUND;
         goto FIND_ELAN_HIDRAW_DEVICE_EXIT;
     }
