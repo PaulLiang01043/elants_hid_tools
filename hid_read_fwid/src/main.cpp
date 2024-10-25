@@ -1,10 +1,11 @@
 /******************************************************************************
- * Copyright (c) 2019 ELAN Technology Corp. All Rights Reserved.
  *
  * Implementation of Elan HID (I2C-HID / SPI-HID) Read FWID Tool
  *
- *Release:
+ * Release:
  *		2024/3
+ *
+ * Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
  *****************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>

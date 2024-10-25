@@ -2,14 +2,14 @@
 
   Header of APIs of Firmware Update Flow for Elan HID (I2C-HID / SPI-HID) Touchscreen.
 
-  Copyright (c) ELAN microelectronics corp. 2022, All Rights Reserved
-
   Module Name:
 	ElanTsFwUpdateFlow.cpp
 
   Environment:
 	All kinds of Linux-like Platform.
 
+
+  Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
 ********************************************************************
  Revision History
 

@@ -1,5 +1,7 @@
-// HIDLinuxGet.h: Declaration of CHIDLinuxGet Class.
 //
+// HIDLinuxGet.h: Header of CHIDLinuxGet Class.
+//
+// Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
 //////////////////////////////////////////////////////////////////////
 
 #ifndef __HID_LINUX_GET_H__

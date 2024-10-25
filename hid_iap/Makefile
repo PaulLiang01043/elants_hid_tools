@@ -1,52 +1,58 @@
 #
 # Makefile for hid_iap (I2C-HID / SPI-HID Interface)
-# Date: 2024/03/04
+# Date: 2024/10/22
 #
-program := hid_iap
-objects := ElanTsDebug.o \
-           BaseLog.o \
-           HIDLinuxGet.o \
-           ElanTsHidUtility.o \
-           ElanTsFuncApi.o \
-           ElanTsFwFileIoUtility.o \
-           ElanTsFwUpdateFlow.o \
-           ElanGen8TsHidUtility.o \
-           ElanGen8TsFuncApi.o \
-           ElanGen8TsFwFileIoUtility.o \
-           ElanGen8TsFwUpdateFlow.o \
-           main.o
-libraries := stdc++ rt pthread
-executable_path := ./bin
-source_path := ./src
-include_path := ./include 
+# Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
 
-CXX ?= g++ # Compiler: GCC C++ Compiler
-#CXX ?= arm-none-linux-gnueabi-g++ # Compiler: arm Cross Compiler 
-#CXX ?= aarch64-none-linux-gnu-g++ # Compiler: aarch64 Cross Compiler 
-CXXFLAGS = -Wall -Wno-format-overflow -ansi -O3 -g
+# Variables
+PROGRAM := hid_iap
+SRCS := ElanTsDebug.cpp \
+        BaseLog.cpp \
+        HIDLinuxGet.cpp \
+        ElanTsHidUtility.cpp \
+        ElanTsFuncApi.cpp \
+        ElanTsFwFileIoUtility.cpp \
+        ElanTsFwUpdateFlow.cpp \
+        ElanGen8TsHidUtility.cpp \
+        ElanGen8TsFuncApi.cpp \
+        ElanGen8TsFwFileIoUtility.cpp \
+        ElanGen8TsFwUpdateFlow.cpp \
+        main.cpp
+OBJS := $(SRCS:.cpp=.o)
+LIBS := stdc++ rt pthread
+
+# Paths
+srcdir     := ./src
+includedir := ./include 
+bindir     := ./bin
+
+# Variables Used by Implicit Rules
+CXX      ?= g++
+CXXFLAGS := -Wall -Wno-format-overflow -ansi -O3 -g
 CXXFLAGS += -D__ENABLE_DEBUG__
 CXXFLAGS += -D__ENABLE_OUTBUF_DEBUG__
 CXXFLAGS += -D__ENABLE_INBUF_DEBUG__
-CXXFLAGS += -static
-INC_FLAGS += $(addprefix -I, $(include_path))
-LIB_FLAGS += $(addprefix -l, $(libraries))
-VPATH = $(include_path)
-vpath %.h $(include_path)
-vpath %.c $(source_path)
-vpath %.cpp $(source_path)
-.SUFFIXS: .c .cpp .h
+CXXFLAGS += $(addprefix -I, $(includedir))
+LDLIBS   += $(addprefix -l, $(LIBS))
 
+# Search Paths
+VPATH = $(srcdir):$(includedir):$(bindir)
+vpath %.cpp $(srcdir)
+vpath %.h   $(includedir)
+vpath %     $(bindir)
+
+.SUFFIXS: .cpp .h
 .PHONY: all
-all: $(objects)
-	$(CXX) $^ $(CXXFLAGS) $(INC_FLAGS) $(LIB_FLAGS) -o $(program)
-	@chmod 777 $(program)
-	@mv $(program) $(executable_path)
-	@rm -rf $^
+all: $(OBJS)
+	$(CXX) $^ $(CXXFLAGS) $(LDLIBS) -o $(PROGRAM)
+	@chmod 777 $(PROGRAM)
+	@mv $(PROGRAM) $(bindir)
+	@$(RM) $^
 	
 %.o: %.cpp
-	$(CXX) -c $< $(CXXFLAGS) $(INC_FLAGS) $(LIB_FLAGS)
+	$(CXX) -c $< $(CXXFLAGS) $(LDLIBS)
 	
 .PHONY: clean
 clean: 
-	@rm -rf $(executable_path)/$(program) $(objects)
+	@$(RM) $(bindir)/$(PROGRAM) $(OBJS)
 

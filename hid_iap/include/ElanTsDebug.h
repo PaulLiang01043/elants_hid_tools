@@ -1,5 +1,7 @@
-// ElanTsDebug.h: Definition Header of Elan Touchscreen Debug Utility.
 //
+// ElanTsDebug.h: Header of Elan Touchscreen Debug Utility.
+//
+// Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
 //////////////////////////////////////////////////////////////////////
 
 #ifndef __ELAN_TS_DEBUG_H__

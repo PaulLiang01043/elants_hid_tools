@@ -1,3 +1,8 @@
+//
+// HidConfig.h: Declaration of HID Configuration.
+//
+// Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
+//////////////////////////////////////////////////////////////////////
 #ifndef __HID_CONFIG_H__
 #define __HID_CONFIG_H__
 #pragma once

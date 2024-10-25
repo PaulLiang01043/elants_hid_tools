@@ -3,14 +3,13 @@
   Header of HW Parameters of Elan Gen8 HID (I2C-HID / SPI-HID) Touchscreen.
   The touch controller aforementioned includes Gen8 touch series.
 
-  Copyright (c) ELAN microelectronics corp. 2022, All Rights Reserved
-
   Module Name:
 	ElanGen8TsHidHwParameters.h
 
   Environment:
 	All kinds of Linux-like Platform.
 
+  Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
 ********************************************************************
  Revision History
 

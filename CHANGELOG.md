@@ -1,4 +1,7 @@
-# Changelog
+# 
+# Changelog of elants_hid_tools.
+# 
+# Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
 
 All notable changes to this project will be documented in this file.
 
@@ -37,3 +40,16 @@ Sources of this project is based on elan_i2chid_tools v1.18 2022/10/28.
 - Change unit of length parameter of Gen8 Read ROM Command to byte.
 - Reduce delay after Write Flash Key Command & Enter IAP Command in Gen8 FW Update Flow.
 - Remove redundant CRLFs in debug log.
+
+## [0.4] - 2024-10-25
+
+### Added
+- Add copyright notice to all sources and makefiles.
+
+### Change
+- Refactor all makefiles, changing used variables to the ones appeared in "The GNU Make Reference Manual: Version 4.2".
+- Update fwid_mapping_table.txt to current version.
+
+### Fixed
+- Update copyright year of all sources and makefiles.
+

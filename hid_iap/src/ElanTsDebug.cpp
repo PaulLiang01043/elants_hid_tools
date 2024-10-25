@@ -1,5 +1,7 @@
+//
 // ElanTsDebug.cpp: Implementation of Elan Touchscreen Debug Utility.
 //
+// Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
 //////////////////////////////////////////////////////////////////////
 
 #include "ElanTsDebug.h"

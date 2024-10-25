@@ -1,7 +1,3 @@
-#ifndef __INTERFACE_GET_H__
-#define __INTERFACE_GET_H__
-#pragma once
-
 /**************************************************************************
 * IntefaceGet.h
 * Base Class of All-Interface Class.
@@ -20,7 +16,13 @@
 *	int GetPID(void);
 *
 * Date: 2013/06/26
+*
+* Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
 **************************************************************************/
+#ifndef __INTERFACE_GET_H__
+#define __INTERFACE_GET_H__
+#pragma once
+
 #include <cstdio>
 #include "BuildConfig.h"
 #include "ErrCode.h"

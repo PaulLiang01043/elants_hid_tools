@@ -1,3 +1,8 @@
+//
+// BuildConfig.h: Header of Build Configuration.
+//
+// Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
+//////////////////////////////////////////////////////////////////////
 #ifndef __BUILD_CONFIG_H__
 #define __BUILD_CONFIG_H__
 #pragma once

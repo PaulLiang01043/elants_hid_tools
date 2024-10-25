@@ -1,3 +1,8 @@
+//
+// ErrCode.h: Declaration of Error Code.
+//
+// Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
+//////////////////////////////////////////////////////////////////////
 #ifndef __ERR_CODE_H__
 #define __ERR_CODE_H__
 #pragma once

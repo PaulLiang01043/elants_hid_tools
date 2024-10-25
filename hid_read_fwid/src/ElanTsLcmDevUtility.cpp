@@ -2,14 +2,13 @@
 
   Implementation of LCM Device Utility for Elan HID (I2C-HID / SPI-HID) Touchscreen.
 
-  Copyright (c) ELAN microelectronics corp. 2022, All Rights Reserved
-
   Module Name:
 	ElanTsLcmDevUtility.cpp
 
   Environment:
 	All kinds of Linux-like Platform.
 
+  Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
 **/
 
 #include <stdio.h>

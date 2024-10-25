@@ -1,5 +1,8 @@
+//
 // HIDLinuxGet.cpp : Implementation of CHIDLinuxGet Class.
 //
+// Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
+//////////////////////////////////////////////////////////////////////
 
 #include <fcntl.h>        /* open */
 #include <unistd.h>       /* close */

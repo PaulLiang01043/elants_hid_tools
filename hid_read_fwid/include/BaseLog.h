@@ -1,12 +1,9 @@
-/**************************************************************************
-* BaseLog.h
-*
-* Header of CBaseLog class, for logging message to log file.
-*
-* Date: 2024/03/05
-**************************************************************************/
-// BaseLog.h: Declaration for the CBaseLog class.
 //
+// BaseLog.h: Header of CBaseLog class, for logging message to log file.
+//
+// Date: 2024/03/05
+//
+// Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
 //////////////////////////////////////////////////////////////////////
 
 #ifndef __BASE_LOG_H__

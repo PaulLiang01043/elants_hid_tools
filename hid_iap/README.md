@@ -1,51 +1,55 @@
-# i2chid_iap_v2
-Elan Touchscreen Firmware Update Tool (I2C-HID Interface)
+# 
+# Readme document for hid_iap (I2C-HID / SPI-HID Interface)
+# Date: 2024/08/01
+# 
+# Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
+Elan Touchscreen Firmware Update Tool (I2C-HID / SPI-HID Interface)
 ---
     Get ELAN Touchscreen Firmware Information & Update Firmware.
 
 Compilation
 --- 
-    make: to build the exectue project "i2chid_iap_v2".
+    make: to build the exectue project "hid_iap".
     $ make
    
 Run
 ---
 Get Firmware Information :
 
-    ./i2chid_iap_v2 -P {hid_pid} -i
+    ./hid_iap -P {hid_pid} -i
 ex:
 
-    ./i2chid_iap_v2 -P 2a03 -i
+    ./hid_iap -P 2a03 -i
 
 Update Firmware :
 
-    ./i2chid_iap_v2 -P {hid_pid} -f {firmware_file}
+    ./hid_iap -P {hid_pid} -f {firmware_file}
 
 ex:
 
-    ./i2chid_iap_v2 -P 2a03 -f /tmp/elants_i2c_2a03.bin
+    ./hid_iap -P 2a03 -f /tmp/elants_hid_2a03.bin
 
 Calibrate Touchscreen :
 
-    ./i2chid_iap_v2 -P {hid_pid} -k
+    ./hid_iap -P {hid_pid} -k
 
 ex: 
 
-    ./i2chid_iap_v2 -P 2a03 -k
-
-Configure Log File Name :
-
-    ./i2chid_iap_v2 -P {hid_pid} -f {firmware_file} -l {result_log_file}
-
-ex: 
-
-    ./i2chid_iap_v2 -P 2a03 -f /tmp/elants_i2c_2a03.bin -l result.txt
+    ./hid_iap -P 2a03 -k
 
 Enable Silent Mode :
 
-    ./i2chid_iap_v2 -P {hid_pid} -f {firmware_file} -s
+    ./hid_iap -P {hid_pid} -f {firmware_file} -s
 
 ex: 
 
-    ./i2chid_iap_v2 -P 2a03 -f /tmp/elants_i2c_2a03.bin -s
+    ./hid_iap -P 2a03 -f /tmp/elants_hid_2a03.bin -s
+
+Get Help Information :
+
+    ./hid_iap -h
+
+ex: 
+
+    ./hid_iap -h
 

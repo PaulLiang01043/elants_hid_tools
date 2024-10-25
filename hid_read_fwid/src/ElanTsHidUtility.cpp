@@ -2,14 +2,13 @@
 
   Implementation of Function Utility for Elan HID (I2C-HID / SPI-HID) Touchscreen.
 
-  Copyright (c) ELAN microelectronics corp. 2019, All Rights Reserved
-
   Module Name:
 	ElanTsHidUtility.cpp
 
   Environment:
 	All kinds of Linux-like Platform.
 
+  Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
 **/
 
 #include "HIDLinuxGet.h"

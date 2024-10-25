@@ -1,5 +1,7 @@
-// Log.cpp: implementation of the CLog class.
+// 
+// Log.cpp: Implementation of the CLog class.
 //
+// Copyright (c) 2024 ELAN Microelectronics Corp. All Rights Reserved.
 //////////////////////////////////////////////////////////////////////
 
 //#include "stdafx.h" // Comment out this line if not windows
