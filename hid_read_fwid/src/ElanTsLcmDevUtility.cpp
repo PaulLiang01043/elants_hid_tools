@@ -28,7 +28,6 @@
 int parse_fwid_mapping_file(FILE *fd_mapping_file, struct lcm_dev_info *p_dev_info, size_t dev_info_size)
 {
     int err = 0,
-        line_index = 0,
         token_index = 0,
         dev_info_index = 0;
     char line[1024] = {0},
@@ -97,7 +96,6 @@ int parse_fwid_mapping_file(FILE *fd_mapping_file, struct lcm_dev_info *p_dev_in
         }
 
         memset(line, 0, sizeof(line));
-        line_index++;
         dev_info_index++;
     }
 
